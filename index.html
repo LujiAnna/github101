@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->  <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Intro To Github</title>
+        <meta name="description" content="Introduction to Github">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="github.css">
+    </head>
+
+    <body>
+    <nav id="navbar">
+        <header id="topic">Github 101</header>  
+        <p>Introduction & how to <em>git</em> started ...</p>
+        <ul>
+        <li><a href="#Basic_Concepts" class="nav-link">Basic Concepts</a></li> 
+        <li><a href="#Install_Git" class="nav-link">Install Git</a></li>
+        <li><a href="#Version_Control_System_(VCS)" class="nav-link">Version Control System (VCS)</a></li>
+        <li><a href="#Git_Operations" class="nav-link">Git Operations</a>
+        <li>Open an Account</li>
+        <li>Sign In/Up</li>
+        <li>Create a File Repository</li>
+        <li>Github Website</li>
+        <li>Adding a File to a Repository</li>
+        <li>Using Command Line</li>
+        <li>Drag and Drop to directory</li>
+        <li>Upload from repository page</li>
+        <li>Make changes (updating a file)</li>
+        <li>Clone</li>
+        <li>After making some changes</li>
+        <li>Add</li>
+        <li>Commit</li>
+        <li>Merging the changes</li>
+        <li>Merge Conflicts</li>
+        <li>Project Release</li>
+        <li><a href="#Other_VCS" class="nav-link">Other VCS </a></li>     
+        <li><a href="https://twitter.com/IkokiAnna" target="_blank">Tweet Me!</a></li>
+        <li><a href="https://github.com/LujiAnna/github101" target="_blank"> Fork this repo & modify. </a></li>
+        <li> <iframe src="../portfolio/index.html" alt="Anna"></iframe> </li>
+        </ul>
+    </nav>   
+
+    <main id="main-doc">
+
+        <section class=main-section id="Basic_Concepts">
+        <header>Basic Concepts</header>
+        <p> <a href="https://git-scm.com">Git: </a>
+        is a Software for source code control (cloud).</p>
+        <p><a href="https://github.com">Github: </a>is an 
+        <strong>online service (website)</strong> which hosts Git. It is a popular open source social network for coding community.</p>
+        </section>
+
+        <section class=main-section id="Install_Git">
+        <header>Install Git</header>
+        <p>To have version control for the code using github, you need to <a href="https://git-scm.com">download git</a>, as github is a <strong>web interface</strong> built around a VCS (git).</p>
+        <p>It is open source, and FREE.</p>
+        </section>
+
+        <section class=main-section id="Version_Control_System_(VCS)">
+        <header>Version Control System (VCS)</header>
+        
+        <p><a href="https://en.wikipedia.org/wiki/Version_control">VCS</a> tracks and control change during development and maintainenace of code (electronic documents). It allows software developers to work together and sometimes simultaneouely without overwriting each other&#39;s changes while maintaining the history of every version.</p>
+        </section>
+
+        <section class=main-section id="Git_Operations">
+        <header>Git Operations</header>
+        
+        <p><a href="https://github.com"> Create an account on Github</a> or <a href="https://github.com/login">sign in to Github</a></p> <hr>
+        
+        <h3 id="toc_8">How to create (new) repositories/files </h3> <hr>
+        
+        <h5 id="toc_9">In github website</h5>
+        
+        <ul>
+        <li><p>At your dashboard: Click <strong>New</strong> button.
+        Name your repository (file/folder). It creates a new repository in github.</p></li>
+        <li><p>By forking: Click <strong>Fork</strong> button from existing repository. It creates your own copy of someone else&#39;s repository</p></li>
+        <li><p>By cloning: Copy the HTTPS web url and paste it into the command line Terminal. This will be your local repository.</p></li>
+        <li><p>By downloading: Click the <strong>Download</strong> button to Open in your computer or Download Zip. This will be the local repository to your computer.</p></li>
+        <li><p>On github repository:</p>
+        
+        <ul>
+        <li>Create New File above the file lists. Name it: fileName.extension</li>
+        <li>Add content on the Edit new file tab</li>
+        <li>Preview, Commit msg, Email address, Propose new file</li>
+        </ul></li>
+        </ul>
+        
+        <h3 id="toc_10">Adding (new) file to a repositories</h3><hr>
+        
+        <h5 id="toc_11">Using Command Line</h5>
+        
+        <ul>
+        <li><p>By creating a new file, then upload and Commit </p>
+        
+        <div><pre> <code class="language-none"> cd ~/Desktop/directoryName
+        git init    
+        git checkout -b develop 
+        touch fileName.md  //make an empty file</code></pre></div></li>
+        </ul>
+        
+        <p>This will create a new git repo to manage the current folder.   </p> 
+        <p>Edit this fileName by adding line(s) and save it. </p>
+        <p>But we want to save this remote. Copy its HTTPS / SSH clone url which looks like <code>git@github.com:UserName/repoName.git</code> or <code>https://github.com/UserName/repoName.git</code></p>
+        
+        <p>Then add the remote</p>
+        
+        <div><pre><code class="language-none">    git remote add origin &lt;url&gt;</code></pre></div>
+        
+        <p>Finally, push the existing repo</p>
+        
+        <div><pre><code class="language-none">    git push -u origin master</code></pre></div>
+        
+        <ul>
+        <li><p>With an existing file in your computer desktop: Upload &amp; Commit </p>
+        
+        <div><pre><code class="language-none">echo &quot;# repoName&quot; &gt;&gt; fileName
+        git init
+        git add fileName //commits the file
+        git commit -m &quot;first commit&quot; //adds the file
+        git remote add origin &lt;github repo url&gt;
+        git push -u origin master
+        /*git commit -am &lt;msg&gt;*/is add &amp; commit together</code></pre></div>
+        
+        <blockquote>
+        <p>Origin is remote-server name (remote repository), while master is just a branch-name. Master is the default branch name of the current working file (the repository).  </p>
+        </blockquote></li>
+        <li><p>Drag and Drop</p></li>
+        </ul>
+        
+        <p>Drag and drop folder or files on to the file tree in github.</p>
+        
+        <ul>
+        <li>Upload</li>
+        </ul>
+        
+        <p>At the main page of the repository, click <strong>Upload files</strong> under your repository name.</p>
+        
+        <h3 id="toc_12">Make some changes (update files)</h3><hr>
+        
+        <ul>
+        <li>By cloning an existing repo on your desktop.</li>
+        </ul>
+        
+        <p>Clone mirrors whole repository. The remote repo will be downloaded and copied in your local repo. You can perform operations using this local repository. You do not need network to do this, until during synchronization.</p>
+        
+        <div><pre><code class="language-none">    cd ~/Desktop
+            git clone &lt;git-repo-url&gt; directoryName
+            cd directoryName
+            git checkout -b develop //to update the dev 
+            git checkout -b myFeatureBranch //create branch</code></pre></div>
+        
+        <p>It will also add a remote named &#39;origin&#39; back to source</p>
+        
+        <p>This will create a folder named directoryName and clones the repo there and adds a remote named &quot;origin&quot; back to the source. &#39;remote&#39; is automatically created when cloning.</p>
+        
+        <p>If you leave the name part out, it will clone to the folder with the repo original name</p>
+        
+        <blockquote>
+        <p>Do NOT commit directly to master-branch NOR commit directly to the develop-branch.</p>
+        
+        <p>Instead, CREATE <strong><em>feature-branches</em></strong> for unit issues</p>
+        </blockquote>
+        
+        <h3 id="toc_13">After making some changes </h3><hr>
+        
+        <div><pre><code class="language-none">git add .  #commit this revision changes .The add-dot stages the current directory and all the files and dir it contains except for empty directories.
+        git commit -m &lt;message explaining changes&gt; #saving/adds</code></pre></div>
+        
+        <h3 id="toc_14"> Merging the change.</h3><hr>
+        
+        <div><pre><code class="language-none">git checkout develop
+        git merge -- myFeatureBranch
+        git push origin develop //stores changes to Git repo</code></pre></div>
+        
+        <p>This will add those features/edits to the develop branch.</p>
+        
+        <h3 id="toc_15"> Merge Conflicts </h3> <hr>
+        
+        <div><pre><code class="language-none"> git pull</code></pre></div>
+        
+        <p><strong>Pull</strong> copies changes from remote repo to local one.</p>
+        
+        <h3 id="toc_16">Project Release </h3> <hr>
+        
+        <div><pre><code class="language-none">git checkout master  //feature branch created 
+        git merge -- develop  //update to develop branch
+        git push origin master  
+        git tag v1.0   //tag is name with a release version
+        git push origin v1.0.0</code></pre></div>
+        
+        <p>This will add the develop branch total features to the master in the final release. </p>
+        
+        <p><strong>Push</strong> copies changes from local to remote repo to store permanently in Git repo.
+        It is used for synchronization between two repos.</p>
+        
+        <p>NOTE: After merging with master branch you can delete develop branch</p>
+        
+        <blockquote>
+        <p>Most of these operations (commit, branches creation, etc can be performed offline. Internet is required only when  publishing changes (push) or taking latest changes (pull).</p>
+        </blockquote>
+        
+        <h3 id="toc_17"> Deleting a Repo </h3>
+        
+        <hr>
+        
+        <p>In the repo dashboard, click <strong>setting</strong>, scroll to the bottom, and delete. Make sure of this before doing so, as you can&#39;t recover the deleted repo.</p>
+        </section>
+
+        <section class=main-section id=Other_VCS>
+        <header>Other VCS</header>
+        
+        <ul>
+        <li><a href="https://about.gitlab.com">Gitlab</a> </li>
+        <li><a href="https://tortoisesvn.net">Tortoise svn</a> </li>
+        <li><a href="https://bitbucket.org">Bitbucket</a></li>
+        <li><a href="https://www.dropbox.com">Dropbox</a></li>
+        <li><a href="https://www.google.com/drive/">Google Drive</a></li>
+        <li><a href="sharepoint.com">Sharepoint</a> (microsoft)</li>
+        <li><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a> (macOS)</li>
+        <li>Wikis: <a href="https://wiki.js.org">Wiki.js</a>, <a href="https://tiki.org/tiki-index.php">Tikiwiki</a>, <a href="https://www.nuclino.com">Nuclino</a>, <a href="https://www.mediawiki.org/wiki/Manual:What_is_MediaWiki%3F">Mediawiki</a></li>
+        <li>Other Code Sharing Sites for building, collaboration, hosting and sharing: <a href="https://repl.it">repl.it</a>, <a href="https://plnkr.co">plunker</a><br></li>
+        </ul>
+        </section>
+        
+    </main>    
+    </body>
+</html>
